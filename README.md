@@ -1,4 +1,11 @@
-# React + TypeScript + Vite
+# About naming reposirories for microservices
+
+## every repository name consist of 3 portions
+
+    - [Project name]-[Project type]-[Service name]
+    - [blog][microservice][posts]
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

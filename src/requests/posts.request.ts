@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const postRequest = axios.create({
+const postsRequest = axios.create({
   baseURL: "http://localhost:4400",
 });
 
-export default postRequest;
+export default postsRequest;

@@ -1,10 +1,13 @@
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { singlePost } from "../store/selectors/posts.selector";
+import { Container } from "@mui/material";
 
 const Post = () => {
   const { postId } = useParams();
-  console.log(postId);
+  const post = useSelector(singlePost(postId!));
 
-  return <></>;
+  return <Container>{post?.title}</Container>;
 };
 
 export default Post;

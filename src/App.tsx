@@ -9,8 +9,6 @@ const Offset = styled("div")((o) => {
 });
 
 function App() {
-  console.log(Offset);
-
   return (
     <>
       <CssBaseline />

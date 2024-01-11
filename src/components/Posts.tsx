@@ -7,6 +7,7 @@ import axios, { AxiosError } from "axios";
 
 const Posts = () => {
   const dispatch = useDispatch();
+  const posts = useSelector(allPosts);
 
   useEffect(() => {
     const getAllposts = async () => {
@@ -25,7 +26,13 @@ const Posts = () => {
 
   return (
     <Grid container spacing={1}>
-      <Grid item lg={4} sm={3} xs={2} xl={5}></Grid>l
+      {posts.map((post) => {
+        return (
+          <Grid item lg={3} xl={2} md={4} sm={5} xs={6} key={post.id}>
+            {post.title}
+          </Grid>
+        );
+      })}
     </Grid>
   );
 };

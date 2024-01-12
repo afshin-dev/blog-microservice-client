@@ -6,9 +6,17 @@ export const allPosts = (state: RootState) => {
 };
 
 // select on post from store
-export const singlePost: (
-  id: string
-) => (state: RootState) => Post | undefined =
+export const singlePost: (id: string) => (state: RootState) => Post | null =
   (id: string) => (state: RootState) => {
-    return state.posts.entities.find((post) => post.id === id);
+    return state.posts.entities.find((post) => post.id === id) || null;
+  };
+
+export const SingleVisitedPost: (
+  id: string
+) => (state: RootState) => Post | null =
+  (postId: string) => (state: RootState) => {
+    if (postId) {
+      return state.posts.visitedPosts[postId] || null;
+    }
+    return null;
   };

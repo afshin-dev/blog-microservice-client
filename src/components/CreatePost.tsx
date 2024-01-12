@@ -51,7 +51,7 @@ const CreatePost = () => {
           fullWidth
           label="content"
           multiline
-          rows={8}
+          rows={5}
           onChange={(e) => setContent(e.target.value)}
         ></TextField>
         <Button variant="contained" type="submit">

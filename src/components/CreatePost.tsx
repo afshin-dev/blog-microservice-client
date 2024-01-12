@@ -1,9 +1,10 @@
 import { Box, Button, Container, TextField } from "@mui/material";
 import axios from "axios";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import React from "react";
 import { Post, populateAllPosts } from "../store/slices/posts.slice";
 import { useDispatch } from "react-redux";
+import postsRequest from "../requests/posts.request";
 
 const CreatePost = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const CreatePost = () => {
     }
 
     try {
-      const resp = await axios.post<Post[]>("http://localhost:4400/posts/", {
+      const resp = await postsRequest.post<Post[]>("/posts/", {
         title: title,
         content: content,
       });

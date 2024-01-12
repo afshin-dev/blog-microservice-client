@@ -15,7 +15,7 @@ import { useEffect } from "react";
 import axios, { AxiosError } from "axios";
 import { Link as RRLink } from "react-router-dom";
 import CreatePost from "./CreatePost";
-
+import postsRequest from "../requests/posts.request";
 const Posts = () => {
   const dispatch = useDispatch();
   const posts = useSelector(allPosts);
@@ -23,7 +23,7 @@ const Posts = () => {
   useEffect(() => {
     const getAllposts = async () => {
       try {
-        const resp = await axios.get<Post[]>("http://localhost:4400/posts");
+        const resp = await postsRequest.get<Post[]>("/posts");
         dispatch(populateAllPosts(resp.data));
       } catch (e: unknown) {
         console.log(e as AxiosError);

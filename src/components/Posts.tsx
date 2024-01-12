@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Post, populateAllPosts } from "../store/slices/posts.slice";
 import { allPosts } from "../store/selectors/posts.selector";
 import { useEffect } from "react";
-import axios, { AxiosError } from "axios";
+import { AxiosError } from "axios";
 import { Link as RRLink } from "react-router-dom";
 import CreatePost from "./CreatePost";
 import postsRequest from "../requests/posts.request";

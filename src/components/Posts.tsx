@@ -38,7 +38,7 @@ const Posts = () => {
   return (
     <>
       <CreatePost></CreatePost>
-      <Grid container spacing={1}>
+      <Grid container spacing={1} marginTop={3}>
         {posts.map((post) => {
           return (
             <Grid item lg={3} xl={2} md={4} sm={5} xs={6} key={post.id}>
